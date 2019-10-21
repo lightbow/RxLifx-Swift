@@ -325,7 +325,7 @@
 				TargetAttributes = {
 					10DE9A551E5736FA007D0095 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 					};
 					10DE9A5E1E5736FA007D0095 = {
@@ -340,6 +340,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 10DE9A4C1E5736FA007D0095;
@@ -616,7 +617,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = wo.lf.RxLifxApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -638,7 +639,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = wo.lf.RxLifxApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
