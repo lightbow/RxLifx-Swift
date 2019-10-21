@@ -69,7 +69,7 @@ public class LightService<T>: LightSource where T:Transport, T.TMG == LightMessa
         }
         self.extensions = extensions
         self.lightsChangeDispatcher = changeDispatcher
-        self.tick = Observable<Int>.interval(5, scheduler: mainScheduler).publish().refCount()
+        self.tick = Observable<Int>.interval(LightServiceConstants.transportRetryTimeout, scheduler: mainScheduler).publish().refCount()
         self.mainScheduler = mainScheduler
         self.ioScheduler = ioScheduler
 
@@ -130,7 +130,7 @@ public class LightService<T>: LightSource where T:Transport, T.TMG == LightMessa
     }
 
     private func broadcastStateServiceDelayed() -> Disposable {
-        return Observable<Int>.timer(1, period: nil, scheduler: self.ioScheduler).subscribe{ event in
+        return Observable<Int>.timer(.seconds(1), period: nil, scheduler: self.ioScheduler).subscribe{ event in
             switch(event){
             case .next(_):
                 BroadcastGetServiceCommand.create(lightSource: self).fireAndForget()
